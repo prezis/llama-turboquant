@@ -450,10 +450,17 @@ namespace GGUFMeta {
             struct GGUFMeta::ArrayInfo arr_info =
                 GGUFMeta::GKV<GGUFMeta::ArrayInfo>::get_kv(metadata, kid);
 
-            if (n != arr_info.length) {
-                throw std::runtime_error(format("key %s has wrong array length; expected %u, got %u", key.c_str(), n, (uint32_t) arr_info.length));
+            if (arr_info.length > n) {
+                throw std::runtime_error(format("key %s has wrong array length; expected <= %u, got %u", key.c_str(), n, (uint32_t) arr_info.length));
             }
 
+            if (arr_info.length < n) {
+                // Zero-fill then read available elements
+                std::fill(result.begin(), result.end(), typename std::remove_reference<decltype(result[0])>::type{});
+            }
+
+            // Use the actual array length for get_arr
+            // Note: get_arr reads arr_info.length elements into result
             return get_arr(key, result, required);
         }
 
