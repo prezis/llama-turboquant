@@ -1,0 +1,14 @@
+# .gitleaksignore — confirmed false positives (auto-generated 2026-04-26)
+# Triaged: test fixtures (0xabcdef placeholders), upstream fork code, public on-chain addresses, dev tokens.
+# Format: <commit>:<file>:<rule>:<startline>  (gitleaks fingerprint)
+
+2c0d875ae6c6043fbbafd2831e160955e9ca6af1:.github/workflows/build.yml:generic-api-key:1530
+3fe36c32389ade876ec505f32df08f5121cf597f:.github/workflows/build.yml:generic-api-key:1692
+4afb0a746f22abaa545b3ebdb76a400d7da3a713:tools/server/tests/unit/test_completion.py:generic-api-key:251
+4d1051a40ffc2fdff80bc532eea5b9568b85c156:examples/llava/README-granitevision.md:aws-access-token:172
+9cd4ebcfb1ceb3b4af6276089252dc27690e98ba:.github/workflows/build.yml:generic-api-key:1252
+bee378e0988b44bbe93b0768208080951b312363:.github/workflows/build.yml:generic-api-key:1264
+bee378e0988b44bbe93b0768208080951b312363:.github/workflows/build.yml:generic-api-key:1289
+ddf9f94389a614ce005347f1c3f60ce477df1be1:tools/server/README.md:curl-auth-header:1389
+f7cab35ef9e66c57b4a416d09eb6c814e0ba4e4c:examples/gguf-hash/deps/xxhash/xxhash.h:generic-api-key:4905
+f7cab35ef9e66c57b4a416d09eb6c814e0ba4e4c:examples/gguf-hash/deps/xxhash/xxhash.h:generic-api-key:4954
